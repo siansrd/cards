@@ -18,4 +18,13 @@ public class Card {
     return rank;
   }
 
+  public void printCard() {
+    String suitSymbol = suit.getSuitSymbol();
+    String formattedCard = String.format("%s %s", 
+      suitSymbol, rank.toString());
+    System.out.println(formattedCard);
+  }
+
+  
+
 }

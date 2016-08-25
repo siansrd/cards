@@ -4,14 +4,11 @@ import java.util.*;
 
 public class Deck {
 
-// private Card[] cards;
   private ArrayList<Card> cards;
 
   public Deck() {
-    // this.cards = new Card[52]; 
     this.cards = new ArrayList<Card>();
     buildDeck();
-
   }
 
   public ArrayList<Card> getCards(){
@@ -28,6 +25,12 @@ public class Deck {
 
   public void shuffle(){
     Collections.shuffle(cards);
+  }
+
+  public void printDeck() {
+    for( Card card : cards ) {
+      card.printCard(); 
+    }
   }
 
 }
