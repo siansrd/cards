@@ -5,10 +5,14 @@ public class Game {
   public void startGame() {
     Deck deck = new Deck();
     deck.shuffle();
-    // deck.printDeck();
+    deck.printDeck();
 
   }
 
+
+  // public void alternatePlayer() {
+    
+  // }
 
 
 }
