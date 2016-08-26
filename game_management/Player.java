@@ -24,6 +24,7 @@ public class Player {
     for (Card card : hand) {
       card.printCard();
     }
+    System.out.println();
   }
 
 
