@@ -21,8 +21,24 @@ public class Game {
     String name2 = getPlayerName();
     Player player2 = new Player(name2);
 
+    // Deal
     dealer.dealCard(2, player1);
+
+    // Print Hand
+    String nameHand1 = String.format("%s %s", name1, "Hand:");
+    System.out.println(nameHand1);
+    player1.printHand();
+
+    // Deal
     dealer.dealCard(2, player2);
+
+    // Print Hand
+    String nameHand2 = String.format("%s %s", name2, "Hand:");
+    System.out.println(nameHand2);
+    player2.printHand();
+
+
+
   }
 
 

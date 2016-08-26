@@ -19,9 +19,12 @@ public class Player {
     return hand;
   }
 
-
-
-  
+  public void printHand() {
+    hand = getHand();
+    for (Card card : hand) {
+      card.printCard();
+    }
+  }
 
 
 }
