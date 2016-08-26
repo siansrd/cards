@@ -15,6 +15,10 @@ public class Deck {
     return cards;
   }
 
+  public int getDeckSize() {
+    return cards.size();
+  }
+
   public void buildDeck() {   
     for( SuitType suit : SuitType.values()){
       for ( RankType rank : RankType.values()){

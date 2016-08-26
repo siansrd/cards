@@ -2,11 +2,13 @@ package game_management;
 
 public class Game {
 
-  public static void main(String[] args) {
+  public void startGame() {
     Deck deck = new Deck();
     deck.shuffle();
-    deck.printDeck();
+    // deck.printDeck();
+
   }
 
+  
 
 }

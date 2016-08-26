@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Player {
 
-  String name;
-  ArrayList<Card> hand;
+  private String name;
+  private ArrayList<Card> hand;
 
   public Player(String name) {
     this.name = name;
@@ -15,6 +15,13 @@ public class Player {
     return this.name;
   }
 
+  public ArrayList<Card> getHand() {
+    return hand;
+  }
+
+
+
+  
 
 
 }
