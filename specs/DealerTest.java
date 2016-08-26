@@ -35,7 +35,7 @@ public class DealerTest {
 
   @Test
   public void canGiveCardToPlayer() {
-    dealer.dealCard(player1);
+    dealer.dealCard(1, player1);
     assertEquals( 1, player1.getHand().size());
   }
 

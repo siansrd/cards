@@ -17,12 +17,14 @@ public class Dealer {
     return deck.getCards().remove(0);
   }
 
-  public void dealCard(Player player) {
-    Card card = takeTopCard();
-    player.getHand().add(card);
+  public void dealCard(int numberOfCards, Player player) {
+    int counter = 0;
+    while (counter < numberOfCards){
+      Card card = takeTopCard();
+      player.getHand().add(card);
+      counter++;
+    }
   }
-
-
 
 }
 
