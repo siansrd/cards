@@ -2,8 +2,8 @@ package game_management;
 
 public class Card {
 
-  SuitType suit;
-  RankType rank;
+  private SuitType suit;
+  private RankType rank;
 
   public Card(SuitType suit, RankType rank) {
     this.suit = suit;

@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Dealer {
 
-  public Deck deck;
+  private Deck deck;
 
   public Dealer(Deck deck) {
     this.deck = deck;

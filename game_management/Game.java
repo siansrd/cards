@@ -3,8 +3,17 @@ import java.util.*;
 
 public class Game {
 
+  private Deck deck;
+  private Dealer dealer;
+
+  public Game(){
+    deck = new Deck();
+    dealer = new Dealer(deck);
+  }
+
+
   public void startGame() {
-    Deck deck = new Deck();
+    // Deck deck = new Deck();
     deck.shuffle();
     // deck.printDeck();
     String name1 = getPlayerName();
@@ -12,12 +21,11 @@ public class Game {
     String name2 = getPlayerName();
     Player player2 = new Player(name2);
 
+    dealer.dealCard(2, player1);
+    dealer.dealCard(2, player2);
   }
 
 
-  // public void alternatePlayer() {
-    
-  
 
   public String getPlayerName() {
     Scanner nameInput = new Scanner(System.in);
