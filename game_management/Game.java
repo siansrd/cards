@@ -17,24 +17,16 @@ public class Game {
     // Get number of players
     System.out.println();
     int numberOfPlayers = getNumberOfPlayers();
-    
-
-
-    // Create player 1
-    String name1 = getPlayerName();
-    Player player1 = new Player(name1);
-
-    // Create Player 2
-    String name2 = getPlayerName();
-    Player player2 = new Player(name2);
-
-
     // Create ArrayList of players
-    ArrayList<Player> players = createPlayerArrayList(player1, player2);
-
+    ArrayList<Player> players = new ArrayList<Player>();
+    // Get user input to create player names
+    createPlayers(numberOfPlayers, players);
+    // Deal 2 to each player
     firstDeal(players);
     
-    // New Card? Input. if true. dealer.dealCard(1)
+    // for each player ask if they want another card.
+    // if yes deal one
+    // if no return
 
     System.out.println("And the winner is...");
     System.out.println(getWinner(players));
@@ -56,7 +48,14 @@ public class Game {
     return name;
   }
 
-  public 
+  public void createPlayers(int numberOfPlayers, ArrayList<Player> players) {
+    int num;
+    for(num = 0; num < numberOfPlayers; num++) {
+      String name = getPlayerName();
+      Player player = new Player(name);
+      players.add(player);
+    }
+  }
 
 
   public void formatNameHandText(Player player) {
@@ -65,12 +64,7 @@ public class Game {
     System.out.println(text);
   }
 
-  public ArrayList<Player> createPlayerArrayList(Player player1, Player player2) {
-    ArrayList<Player> players = new ArrayList<Player>();
-    players.add(player1);
-    players.add(player2);
-    return players;
-  }
+  
 
   public void firstDeal(ArrayList<Player> players) {
     for (Player player : players) {

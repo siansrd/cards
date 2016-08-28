@@ -20,15 +20,13 @@ public class GameTest {
     player2 = new Player("Jabe");
   }
 
-  @Test
-  public void checkPlayerArrayList() {
-    assertEquals(2, game1.createPlayerArrayList(player1, player2).size());
-  }
-
+  
 
   @Test
   public void checkGetWinner() {
-    ArrayList<Player> players = game1.createPlayerArrayList(player1, player2);
+    ArrayList<Player> players = new ArrayList<Player>();
+    players.add(player1);
+    players.add(player2);
     dealer.dealCard(2, player1);
     dealer.dealCard(2, player2);
     assertEquals("Sian", game1.getWinner(players));
