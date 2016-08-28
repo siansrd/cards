@@ -23,26 +23,29 @@ public class Game {
     createPlayers(numberOfPlayers, players);
     // Deal 2 to each player
     firstDeal(players);
-    
+    // ADD CHECK FOR 21
     anotherCard(players);
-    // for each player ask if they want another card.
-    // if yes, deal one. if 21 print YOU WIN and return.
-    // if no returnn null.
-
-    // System.out.println("And the winner is...");
-    // System.out.println(getWinner(players));
 
   }
 
-  public void checkWinner(Player player, int value) {
+
+  public void playerStatus(Player player) {
     int playerValue = player.getHandValue();
-    if (playerValue == 21) {
-      System.out.println("YOU WIN!");
-    }
     if (playerValue > 21) {
-      System.out.println("YOU LOOSE");
+      System.out.println("You're out of the game.");
+      System.out.println();
+    }
+    else if (playerValue == 21) {
+      System.out.println("You've won!");
+      System.out.println();
+      // Exit the whole game
+    }
+    else {
+      System.out.println("OK!");
+      System.out.println();
     }
   }
+ 
 
 
   public void anotherCard(ArrayList<Player> players) {
@@ -51,13 +54,16 @@ public class Game {
         if (yn.equals("y")) {
           dealer.dealCard(1, player);
           player.printHand();
-          int newValue = player.getHandValue();
-          checkWinner(player, newValue); 
+          playerStatus(player);
+        }
+        else if (yn.equals("n")) {
+          System.out.println("OK!");
         }
     }
   }
 
   public String askAnotherCard(Player player) {
+    System.out.println();
     String name = player.getName();
     System.out.println(name);
     Scanner ynInput = new Scanner(System.in);
@@ -95,6 +101,7 @@ public class Game {
   public void formatNameHandText(Player player) {
     String name = player.getName();
     String text = String.format("%s's %s", name, "Hand:");
+    System.out.println();
     System.out.println(text);
   }
 
@@ -108,6 +115,8 @@ public class Game {
     }
 
   }
+
+  // Check for 21.
 
   // public String getWinner(ArrayList<Player> players) {
   //   int winnerIndex = 0;
@@ -127,6 +136,15 @@ public class Game {
   //   return players.get(winnerIndex).getName();
   // }
 
+  // public void checkWinner(Player player, int value) {
+  //   int playerValue = player.getHandValue();
+  //   if (playerValue == 21) {
+  //     System.out.println("YOU WIN!");
+  //   }
+  //   if (playerValue > 21) {
+  //     System.out.println("YOU LOOSE");
+  //   }
+  // }
   
 
 }

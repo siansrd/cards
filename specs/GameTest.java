@@ -22,15 +22,15 @@ public class GameTest {
 
   
 
-  @Test
-  public void checkGetWinner() {
-    ArrayList<Player> players = new ArrayList<Player>();
-    players.add(player1);
-    players.add(player2);
-    dealer.dealCard(2, player1);
-    dealer.dealCard(2, player2);
-    assertEquals("Sian", game1.getWinner(players));
-  }
+  // @Test
+  // public void checkGetWinner() {
+  //   ArrayList<Player> players = new ArrayList<Player>();
+  //   players.add(player1);
+  //   players.add(player2);
+  //   dealer.dealCard(2, player1);
+  //   dealer.dealCard(2, player2);
+  //   assertEquals("Sian", game1.getWinner(players));
+  // }
 
 
 }
