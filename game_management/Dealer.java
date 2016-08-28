@@ -23,6 +23,7 @@ public class Dealer {
       Card card = takeTopCard();
       player.getHand().add(card);
       counter++;
+      // Error message is dealer out of cards
     }
   }
 

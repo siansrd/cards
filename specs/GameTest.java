@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 import game_management.*;
+import java.util.*;
 
 public class GameTest {
 
@@ -24,21 +25,14 @@ public class GameTest {
     assertEquals(2, game1.createPlayerArrayList(player1, player2).size());
   }
 
-  // @Test
-  // public void checkCaluclateHandValue() {
-  //   dealer.dealCard(2, player1);
-  //   dealer.dealCard(2, player2);
-  //   game1.createPlayerArrayList(player1, player2);
-  //   assertEquals()
 
-  // }
-
-  // @Test
-  // public void checkEvaluateHands() {
-  //   dealer.dealCard(2, player1);
-  //   dealer.dealCard(2, player2);
-  //   assertEquals("Sian", game1.evaluateHands();)
-  // }
+  @Test
+  public void checkGetWinner() {
+    ArrayList<Player> players = game1.createPlayerArrayList(player1, player2);
+    dealer.dealCard(2, player1);
+    dealer.dealCard(2, player2);
+    assertEquals("Sian", game1.getWinner(players));
+  }
 
 
 }

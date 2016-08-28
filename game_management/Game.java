@@ -13,37 +13,39 @@ public class Game {
 
 
   public void startGame() {
-    // Deck deck = new Deck();
     deck.shuffle();
-    // deck.printDeck();
+    // Get number of players
+    System.out.println();
+    int numberOfPlayers = getNumberOfPlayers();
+    
+
 
     // Create player 1
-    System.out.println();
     String name1 = getPlayerName();
     Player player1 = new Player(name1);
-    System.out.println();
 
     // Create Player 2
     String name2 = getPlayerName();
     Player player2 = new Player(name2);
-    System.out.println();
+
 
     // Create ArrayList of players
-    createPlayerArrayList(player1, player2);
+    ArrayList<Player> players = createPlayerArrayList(player1, player2);
 
-    // Deal player 1
-    dealer.dealCard(2, player1);
-    // Print Hand
-    formatNameHandText(player1);
-    player1.printHand();
+    firstDeal(players);
+    
+    // New Card? Input. if true. dealer.dealCard(1)
 
-    // Deal player 2
-    dealer.dealCard(2, player2);
-    // Print Hand
-    formatNameHandText(player2);
-    player2.printHand();
+    System.out.println("And the winner is...");
+    System.out.println(getWinner(players));
 
+  }
 
+  public int getNumberOfPlayers() {
+    Scanner numberInput = new Scanner(System.in);
+    System.out.print("Enter number of players: ");
+    int numberOfPlayers = numberInput.nextInt();
+    return numberOfPlayers;
   }
 
 
@@ -53,6 +55,8 @@ public class Game {
     String name = nameInput.nextLine();
     return name;
   }
+
+  public 
 
 
   public void formatNameHandText(Player player) {
@@ -68,35 +72,32 @@ public class Game {
     return players;
   }
 
+  public void firstDeal(ArrayList<Player> players) {
+    for (Player player : players) {
+      dealer.dealCard(2, player);
+      formatNameHandText(player);
+      player.printHand();
+    }
 
-// caluclateHandTotal
+  }
 
-// for each player in players
-//  get hand
-// for each card in hand
-//   getRankValue();
-// save to new int array list
-// sum the array list
-// int player1value = 
+  public String getWinner(ArrayList<Player> players) {
+    int winnerIndex = 0;
+    int currentWinnerValue = 0;
+    int playerValue = 0;
+    int index = 0;
 
-
-
-
-
-//   // public void printHand() {
-  //   hand = getHand();
-  //   for (Card card : hand) {
-  //     card.printCard();
-  //   }
-  //   System.out.println();
-  // }
-
-
-  // Compare hands
-
-  // public void evalutateHands() {
-
-  // }
+    for (Player player : players) {
+      playerValue = player.getHandValue();
+      if (playerValue > currentWinnerValue 
+        && playerValue <= 21) {
+          winnerIndex = index;
+          currentWinnerValue = playerValue;
+      }
+      index++;
+    }
+    return players.get(winnerIndex).getName();
+  }
 
 
 
