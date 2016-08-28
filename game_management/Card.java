@@ -3,7 +3,7 @@ package game_management;
 public class Card {
 
   private SuitType suit;
-  private RankType rank;
+  protected RankType rank;
 
   public Card(SuitType suit, RankType rank) {
     this.suit = suit;
@@ -20,8 +20,9 @@ public class Card {
 
   public void printCard() {
     String suitSymbol = suit.getSuitSymbol();
-    String formattedCard = String.format("%s %s", 
-      suitSymbol, rank.toString());
+    int rankValue = rank.getRankValue();
+    String formattedCard = String.format("%s %s (%s)", 
+      suitSymbol, rank.toString(), rankValue);
     System.out.println(formattedCard);
   }
 

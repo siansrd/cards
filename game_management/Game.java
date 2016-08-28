@@ -77,6 +77,7 @@ public class Game {
 //   getRankValue();
 // save to new int array list
 // sum the array list
+// int player1value = 
 
 
 

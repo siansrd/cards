@@ -28,6 +28,12 @@ public class PlayerTest {
     assertEquals(1, player1.getHand().size());
   }
 
+  @Test
+  public void checkGetHandValue() {
+    dealer.dealCard(2, player1);
+    assertEquals(13, player1.getHandValue());
+  }
+
   
 
 }

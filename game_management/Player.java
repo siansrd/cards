@@ -27,5 +27,13 @@ public class Player {
     System.out.println();
   }
 
+  public int getHandValue() {
+    hand = getHand();
+    int handTotal = 0;
+    for (Card card : hand ) {
+       handTotal += card.rank.getRankValue(); 
+    } 
+    return handTotal; 
+  }
 
 }

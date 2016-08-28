@@ -25,6 +25,15 @@ public class GameTest {
   }
 
   // @Test
+  // public void checkCaluclateHandValue() {
+  //   dealer.dealCard(2, player1);
+  //   dealer.dealCard(2, player2);
+  //   game1.createPlayerArrayList(player1, player2);
+  //   assertEquals()
+
+  // }
+
+  // @Test
   // public void checkEvaluateHands() {
   //   dealer.dealCard(2, player1);
   //   dealer.dealCard(2, player2);
