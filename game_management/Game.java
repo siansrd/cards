@@ -24,14 +24,48 @@ public class Game {
     // Deal 2 to each player
     firstDeal(players);
     
+    anotherCard(players);
     // for each player ask if they want another card.
-    // if yes deal one
-    // if no return
+    // if yes, deal one. if 21 print YOU WIN and return.
+    // if no returnn null.
 
-    System.out.println("And the winner is...");
-    System.out.println(getWinner(players));
+    // System.out.println("And the winner is...");
+    // System.out.println(getWinner(players));
 
   }
+
+  public void checkWinner(Player player, int value) {
+    int playerValue = player.getHandValue();
+    if (playerValue == 21) {
+      System.out.println("YOU WIN!");
+    }
+    if (playerValue > 21) {
+      System.out.println("YOU LOOSE");
+    }
+  }
+
+
+  public void anotherCard(ArrayList<Player> players) {
+    for (Player player : players) {
+      String yn = askAnotherCard(player);
+        if (yn.equals("y")) {
+          dealer.dealCard(1, player);
+          player.printHand();
+          int newValue = player.getHandValue();
+          checkWinner(player, newValue); 
+        }
+    }
+  }
+
+  public String askAnotherCard(Player player) {
+    String name = player.getName();
+    System.out.println(name);
+    Scanner ynInput = new Scanner(System.in);
+    System.out.println("another Card? (y/n)");
+    String yN = ynInput.nextLine();
+    return yN;
+  }
+
 
   public int getNumberOfPlayers() {
     Scanner numberInput = new Scanner(System.in);
@@ -75,25 +109,24 @@ public class Game {
 
   }
 
-  public String getWinner(ArrayList<Player> players) {
-    int winnerIndex = 0;
-    int currentWinnerValue = 0;
-    int playerValue = 0;
-    int index = 0;
+  // public String getWinner(ArrayList<Player> players) {
+  //   int winnerIndex = 0;
+  //   int currentWinnerValue = 0;
+  //   int playerValue = 0;
+  //   int index = 0;
 
-    for (Player player : players) {
-      playerValue = player.getHandValue();
-      if (playerValue > currentWinnerValue 
-        && playerValue <= 21) {
-          winnerIndex = index;
-          currentWinnerValue = playerValue;
-      }
-      index++;
-    }
-    return players.get(winnerIndex).getName();
-  }
+  //   for (Player player : players) {
+  //     playerValue = player.getHandValue();
+  //     if (playerValue > currentWinnerValue 
+  //       && playerValue <= 21) {
+  //         winnerIndex = index;
+  //         currentWinnerValue = playerValue;
+  //     }
+  //     index++;
+  //   }
+  //   return players.get(winnerIndex).getName();
+  // }
 
-
-
+  
 
 }
