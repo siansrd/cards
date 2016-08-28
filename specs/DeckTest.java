@@ -11,6 +11,7 @@ public class DeckTest {
   @Before
   public void before() {
     deck = new Deck();
+
   }
 
   @Test 
@@ -19,7 +20,7 @@ public class DeckTest {
   }
 
   @Test
-  public void checkgetDeckSize() {
+  public void checkGetDeckSize() {
     assertEquals(52, deck.getDeckSize());
   }
 

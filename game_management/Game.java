@@ -28,19 +28,20 @@ public class Game {
     Player player2 = new Player(name2);
     System.out.println();
 
-    // Deal
+    // Create ArrayList of players
+    createPlayerArrayList(player1, player2);
+
+    // Deal player 1
     dealer.dealCard(2, player1);
     // Print Hand
     formatNameHandText(player1);
     player1.printHand();
 
-
-    // Deal
+    // Deal player 2
     dealer.dealCard(2, player2);
     // Print Hand
     formatNameHandText(player2);
     player2.printHand();
-
 
 
   }
@@ -59,6 +60,44 @@ public class Game {
     String text = String.format("%s's %s", name, "Hand:");
     System.out.println(text);
   }
+
+  public ArrayList<Player> createPlayerArrayList(Player player1, Player player2) {
+    ArrayList<Player> players = new ArrayList<Player>();
+    players.add(player1);
+    players.add(player2);
+    return players;
+  }
+
+
+// caluclateHandTotal
+
+// for each player in players
+//  get hand
+// for each card in hand
+//   getRankValue();
+// save to new int array list
+// sum the array list
+
+
+
+
+
+//   // public void printHand() {
+  //   hand = getHand();
+  //   for (Card card : hand) {
+  //     card.printCard();
+  //   }
+  //   System.out.println();
+  // }
+
+
+  // Compare hands
+
+  // public void evalutateHands() {
+
+  // }
+
+
 
 
 }
